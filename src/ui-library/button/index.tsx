@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button as AntButton } from 'antd';
+import { Button as AntButton, ButtonProps } from 'antd';
 
-export const Button = ({ name }: { name: string; }) => {
+export const Button = (props: ButtonProps) => {
+  const { children, name, ...otherProps } = props;
   return (
-    <AntButton>{name}</AntButton>
+    <AntButton {...otherProps}>{name || children}</AntButton>
   )
 }
