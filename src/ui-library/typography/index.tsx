@@ -25,3 +25,25 @@ export const Subtext = styled.div<{
   font-size: 0.875rem;
   line-height: 1.375rem;
 `;
+
+
+const linkStyle = `
+  font-weight: normal;
+  color: ${theme.colorLink};
+  cursor: pointer;
+  &:hover, :active, :focus {
+    text-decoration: underline;
+  }
+`;
+
+export const Link1 = styled.a`
+  ${linkStyle}
+  font-size: ${theme.fontSize}px;
+  line-height: 1.375rem;
+`;
+
+export const Link2 = styled.a`
+  ${linkStyle}
+  font-size: ${theme.fontSizeSM}px;
+  line-height: 1.125rem;
+`;
