@@ -10,7 +10,7 @@ interface Profile {
   email: string;
 }
 
-export const LoginWithGoogle = ({ updateLoggedIn }: { updateLoggedIn: (flag: boolean) => void }) => {
+export const LoginWithGoogle = () => {
   const [user, setUser] = useState<Omit<TokenResponse, "error" | "error_description" | "error_uri">>();
   const [profile, setProfile] = useState<Profile | null>(null);
 
@@ -30,7 +30,6 @@ export const LoginWithGoogle = ({ updateLoggedIn }: { updateLoggedIn: (flag: boo
         })
           .then((response: { data: Profile }) => {
             setProfile(response.data);
-            updateLoggedIn(true);
           })
           .catch((error: {}) => console.log(error));
       }
@@ -41,7 +40,6 @@ export const LoginWithGoogle = ({ updateLoggedIn }: { updateLoggedIn: (flag: boo
   // log out function to log the user out of google and set the profile array to null
   const logOut = () => {
     googleLogout();
-    updateLoggedIn(false);
     setProfile(null);
   };
 
