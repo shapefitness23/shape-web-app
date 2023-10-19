@@ -6,6 +6,15 @@ const colorStyle = ({ color }: { color?: string }) => `
 color: ${color || theme.colorText};
 `;
 
+export const H1 = styled.h1`
+  font-size: 24px;
+  font-weight: 500;
+`
+export const H2 = styled.h2`
+  font-size: 20px !important;
+  font-weight: 600;
+`
+
 
 export const Label = styled.span<{ color?: string }>`
   display: inline-block;
