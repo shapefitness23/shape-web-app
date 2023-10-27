@@ -16,9 +16,9 @@ export const H2 = styled.h2`
 `
 
 
-export const Label = styled.span<{ color?: string }>`
+export const Label = styled.span<{ color?: string; fontWeight?: 400 | 500 | 600 }>`
   display: inline-block;
-  font-weight: 500;
+  font-weight: ${({ fontWeight }) => fontWeight || 500};
   font-size: 16px;
   ${colorStyle};
 `;
