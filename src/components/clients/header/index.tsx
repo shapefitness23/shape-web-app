@@ -2,7 +2,9 @@ import React from 'react';
 import { Flex } from '../../../ui-library/flex';
 import { H1, H2, Label } from '../../../ui-library/typography';
 import { HeaderContainer, IconContainer, ProfileIcon } from './styles';
-import { MessageOutlined, VideoCameraOutlined, AlertOutlined } from '@ant-design/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faComments, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faVideoCamera } from '@fortawesome/free-solid-svg-icons';
 
 export const Header = () => {
 
@@ -15,16 +17,18 @@ export const Header = () => {
       </Flex>
       <Flex alignItemsCenter gap='0.5rem'>
         <IconContainer centered>
-          <MessageOutlined color='#292D32' />
+          <FontAwesomeIcon color='#292D32' icon={faComments} />
         </IconContainer>
         <IconContainer centered>
-          <VideoCameraOutlined color='#292D32' />
+          <FontAwesomeIcon color='#292D32' icon={faVideoCamera} />
         </IconContainer>
         <IconContainer centered>
-          <AlertOutlined color='#292D32' />
+          <FontAwesomeIcon color='#292D32' icon={faBell} />
         </IconContainer>
         <Label fontWeight={600}>John Doe</Label>
-        <ProfileIcon centered />
+        <ProfileIcon centered>
+          <FontAwesomeIcon fontSize={20} icon={faUser} />
+        </ProfileIcon>
       </Flex>
     </HeaderContainer>
   )
